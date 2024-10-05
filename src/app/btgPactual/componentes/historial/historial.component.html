@@ -1,0 +1,27 @@
+<mat-divider></mat-divider>
+
+<label>Historial</label>
+<table class="table">
+    <thead class="thead-dark">
+        <tr> 
+            <th scope="col">idUnico</th>
+            <th scope="col">identificacion</th>
+            <th scope="col">fondo</th>
+            <th scope="col">Monto</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Fecha</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of inversiones">
+            <td>{{item.idUnico}}</td>
+            <td>{{item.identificacion}}</td>
+            <td>{{item.fondo}}</td>
+            <td>{{item.monto}}</td>
+            <td>{{item.estado}}</td>
+            <td>{{item.fecha}}</td>
+        </tr>
+
+    </tbody>
+</table>

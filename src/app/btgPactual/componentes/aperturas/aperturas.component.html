@@ -1,0 +1,46 @@
+<mat-divider></mat-divider>
+
+
+<div class="flex row">
+    <div class="col-10 mt-5 md:col-6 md:col-offset-3 md:mt-8">
+        <mat-card>
+            <mat-card-title>Apertura</mat-card-title>
+            <form [formGroup]="myForm">
+                <mat-card-content>
+                    <mat-form-field class="col-12 sm:col-6">
+                        <mat-label>Identificacion</mat-label>
+                        <input type="text" matInput placeholder="Identificacion" formControlName="identificacion"
+                            required>
+                        <mat-error *ngIf="myForm.controls['identificacion'].getError('required')">Campo
+                            requerido</mat-error>
+                        <mat-error *ngIf="myForm.controls['identificacion'].getError('minlength')">debe ser mayor a 4
+                            caracteres</mat-error>
+                    </mat-form-field>
+                    <div>
+                        <mat-form-field class="col-12 sm:col-6">
+                            <mat-label>Select</mat-label>
+                            <mat-select formControlName="fondo" required>
+                                <mat-option value="FPV_BTG_PACTUAL_ECOPETROL">FPV_BTG_PACTUAL_ECOPETROL</mat-option>
+                                <mat-option value="DEUDAPRIVADA">DEUDAPRIVADA</mat-option>
+                                <mat-option value="FDO-ACCIONES">FDO-ACCIONES</mat-option>
+                                <mat-option value="FPV_BTG_PACTUAL_DINAMICA">FPV_BTG_PACTUAL_DINAMICA</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <mat-form-field class="col-12 sm:col-6">
+                        <mat-label>Monto</mat-label>
+                        <input type="number" matInput placeholder="Monto" formControlName="monto" required>
+                        <mat-error *ngIf="myForm.controls['monto'].getError('required')">Campo
+                            requerido</mat-error>
+                        </mat-form-field>
+                </mat-card-content>
+                <div class="button">
+                    <button mat-button mat-flat-button color="primary" style="width : 10em;" (click)="invertir()">
+                        <mat-icon>save</mat-icon>
+                        Invertir
+                    </button>                
+                </div>
+            </form>
+        </mat-card>
+    </div>
+</div>

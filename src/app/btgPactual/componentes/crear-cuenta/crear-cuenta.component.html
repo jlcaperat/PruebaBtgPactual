@@ -1,0 +1,71 @@
+<mat-divider></mat-divider>
+
+
+<div class="flex row">
+    <div class="col-10 mt-5 md:col-6 md:col-offset-3 md:mt-8">
+        <mat-card>
+            <form [formGroup]="myForm" class="grid">
+            
+                    <mat-card-content>
+                        <mat-card-title>Crear Cuenta</mat-card-title>
+                        <mat-form-field class="col-8 sm:col-6">
+                            <mat-label>Identificaion</mat-label>
+                            <input type="text" matInput placeholder="identificacion" formControlName="identificacion"
+                                required>
+                            <mat-error *ngIf="myForm.controls['identificacion'].getError('required')">Campo
+                                requerido</mat-error>
+                            <mat-error *ngIf="myForm.controls['identificacion'].getError('minlength')">debe ser mayor a 4
+                                caracteres</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="col-8 sm:col-6">
+                            <mat-label>Nombres</mat-label>
+                            <input type="text" matInput placeholder="Nombre de usuario" formControlName="nombres"
+                                required>
+                            <mat-error *ngIf="myForm.controls['nombres'].getError('required')">Campo
+                                requerido</mat-error>
+                            <mat-error *ngIf="myForm.controls['nombres'].getError('minlength')">debe ser mayor a 4
+                                caracteres</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="col-8 sm:col-6">
+                            <mat-label>Correo</mat-label>
+                            <input type="email" matInput placeholder="Correo" formControlName="correo"
+                                required>
+                            <mat-error *ngIf="myForm.controls['correo'].getError('required')">Campo
+                                requerido</mat-error>
+                            <mat-error *ngIf="myForm.controls['correo'].getError('minlength')">debe ser mayor a 4
+                                caracteres</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="col-8 sm:col-6">
+                            <mat-label>Celular</mat-label>
+                            <input type="text" matInput placeholder="Celular" formControlName="celular"
+                                required>
+                            <mat-error *ngIf="myForm.controls['celular'].getError('required')">Campo
+                                requerido</mat-error>
+                            <mat-error *ngIf="myForm.controls['celular'].getError('minlength')">debe ser mayor a 4
+                                caracteres</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="col-8 sm:col-6">
+                            <mat-label>Capital</mat-label>
+                            <input type="number" matInput placeholder="Monto" formControlName="monto"
+                                required>
+                            <mat-error *ngIf="myForm.controls['monto'].getError('required')">Campo
+                                requerido</mat-error>
+                            <mat-error *ngIf="myForm.controls['monto'].getError('minlength')">debe ser mayor a 4
+                                caracteres</mat-error>
+                                <mat-error *ngIf="myForm.controls['monto'].getError('minlength')">debe ser mayor a 4
+                                    caracteres</mat-error>
+                                    <mat-error *ngIf="myForm.controls['monto'].getError('min')">El monto debe ser mayora a 500000</mat-error>
+                            
+                        </mat-form-field>
+                  <div class="button">
+                        <button mat-button mat-flat-button color="primary" style="width : 10em;" (click)="onSave()">
+                            <mat-icon>save</mat-icon>
+                            Publicar
+                        </button>
+                    </div>
+                    <br>
+                    </mat-card-content>
+          
+            </form>
+        </mat-card>
+</div>
