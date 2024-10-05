@@ -27,7 +27,7 @@ export class AperturasComponent {
   public myForm: FormGroup = new FormGroup({
     identificacion: new FormControl('', [Validators.minLength(4), Validators.required], []),
     fondo: new FormControl('', [Validators.minLength(4), Validators.required], []),
-    monto: new FormControl('', [Validators.minLength(4), Validators.required, Validators.min(5000000)], []),
+    monto: new FormControl('', [Validators.minLength(4), Validators.required], []),
   })
 
 
